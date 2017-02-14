@@ -1,6 +1,6 @@
 <template>
   <div class="articles">
-    <article class="entry-article" v-for="(item,index) in articleFilterList">
+    <article class="entry-article" v-for="(item,index) in pagingArticles">
       <el-row class="entry-text">
         <el-col :span="24">
           <div class="list-title"> 
@@ -36,21 +36,14 @@ Vue.use(Resource)
 
 export default {
   name: 'articles',
+  props: {
+    totalArticles: Array,
+    pagingArticles: Array
+  },
   data () {
     return {
-      articleList:[],
-      articleFilterList:[]
+      msg: ''
     }
-  },
-  mounted: function(){
-    var _this = this;
-    this.$nextTick(function () {
-      _this.$http.get("static/data/articleData.json").then(function(data){
-        _this.articleList = data.body.result.list;
-        _this.articleFilterList = _this.articleList.slice(0,this.$store.state.pageSize);
-        _this.$store.commit('setArticles',_this.articleList);
-      })
-    })
   }
 }
 </script>

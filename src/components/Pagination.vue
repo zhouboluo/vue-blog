@@ -1,6 +1,6 @@
 <template>
   <div class="pagination">
-    <el-pagination layout="prev, pager, next" :page-size="2" :total="articleList.length" @current-change="curPageChange">
+    <el-pagination layout="prev, pager, next" :page-size="2" :total="totalArticles.length" @current-change="curPageChange">
     </el-pagination>
   </div>
 </template>
@@ -9,27 +9,22 @@
 
 export default {
   name: 'pagination',
+  props: {
+    totalArticles: Array
+  },
   data () {
     return {
-      articleList:this.$store.state.articleList
+      //articleList:this.$store.state.articleList
     }
   },
-   mounted: function(){
+   mounted: function() {
     var _this = this;
-    this.$nextTick(function () {
-      console.log("mounted:"+_this.articleList);
+    this.$nextTick(function() {
     })
   },
-  watch: {
-    articleList: function(){
-      console.log("watch:"+this.articleList);
-    }
-  },
   methods:{
-    curPageChange: function(currentPage){
-      this.$store.state.curPage = currentPage;
-      console.log(currentPage); 
-      console.log();
+    curPageChange: function(currentPage) {
+      this.$store.commit('setCurPage',currentPage);
     }
   }
 }

@@ -19,8 +19,8 @@
       <el-row>
         <el-col :span="24">
           <div class="text-center">
-            <h3><strong>青菜萝卜-胡丁</strong>简介</h3>
-            <p class="am-text-sm">青菜萝卜-胡丁博客定位为IT技术博客站，博客内容主要涉及编程语言、推荐算法、数据挖掘等方面，分享实用的学习和开发资料。 </p>
+            <h3><strong>御剑江湖-小白哥</strong>简介</h3>
+            <p class="am-text-sm">御剑江湖-胡丁博客定位为IT技术博客站，博客内容主要涉及编程语言、推荐算法、数据挖掘等方面，分享实用的学习和开发资料。 </p>
           </div>
           <div class="text-center">Copyright © 2016 青菜萝卜 - 胡丁  |  联系我 : 1043244432@qq.com  |  All Rights Reserved.  |  蜀ICP备16028381
           </div> 

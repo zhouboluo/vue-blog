@@ -12,6 +12,9 @@ const state = {
 const mutations = {
 	setArticles(state, data) {
 		Object.assign(state.articleList, data);
+	},
+	setCurPage(state, data) {
+		state.curPage = data;
 	}
 }
 
